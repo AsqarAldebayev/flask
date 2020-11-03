@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, flash, session, redirect
+from flask import Flask, render_template, url_for, request, flash, session, redirect, abort
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'fdgdsdfjsd87fsdyufjsdjfh'
@@ -49,6 +49,8 @@ def pageNotFount(error):
 
 @app.route("/profile/<username>")
 def profile(username):
+    if 'userLogged' not in session or session['userLogged'] != username:
+        abort(401)
     return f"Ползователь: {username}"
 
 
