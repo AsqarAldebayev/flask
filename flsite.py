@@ -17,7 +17,7 @@ def index():
 @app.route("/about")
 def about():
     print(url_for('about'))
-    return render_template('about.html', title="О сайте", menu=menu)
+    return render_template('about.html', title="О сайте.", menu=menu)
 
 
 @app.route("/contact", methods=["POST", "GET"])
