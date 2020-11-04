@@ -22,7 +22,7 @@ def about():
 
 @app.route("/contact", methods=["POST", "GET"])
 def contact():
-    if request.method == 'POST':
+    if request.metfhod == 'POST':
         if len(request.form['username']) > 2:
             flash('Сообщение отправлено', category='success')
         else:
